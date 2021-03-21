@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>Zhaohao Lin</title><meta name="author" content="Lachlan"><link rel="shortcut icon" href="/blog/img/favicon.png"><link rel="stylesheet" href="/blog/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><meta name="generator" content="Hexo 4.2.0"></head><body><header id="page_header"><div class="header_wrap"><div id="blog_name"><a class="blog_title" id="site-name" href="/blog/">Zhaohao Lin</a></div><button class="menus_icon"><div class="navicon"></div></button><ul class="menus_items"><li class="menus_item"><a class="site-page" href="/blog/"> Publications</a></li><li class="menus_item"><a class="site-page" href="/blog/"> About</a></li><li class="menus_item"><a class="site-page" href="https://lachlanlin.gitee.io/blog/" target="_blank" rel="noopener"> Blog</a></li></ul></div></header><main id="page_main"><div class="side-card sticky"><div class="card-wrap" itemscope itemtype="http://schema.org/Person"><div class="author-avatar"><img class="avatar-img" src="/blog/img/avatar.jpg" onerror="this.onerror=null;this.src='/blog/img/profile.png'" alt="avatar"></div><div class="author-discrip"><h3>Lachlan</h3><p class="author-bio">Your biography can be writed down here.</p></div><div class="author-links"><button class="btn m-social-links">Links</button><ul class="social-icons"><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-facebook-square" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-stack-overflow" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-weibo" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-weixin" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fab fa-qq" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fas fa-envelope" aria-hidden="true"></i></a></li><li><a class="social-icon" href="/" target="_blank"><i class="fas fa-rss" aria-hidden="true"></i></a></li></ul><ul class="social-links"><li><a class="e-social-link" href="/blog/" target="_blank"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>Google Scholar</span></a></li><li><a class="e-social-link" href="/blog/" target="_blank"><i class="fab fa-orcid" aria-hidden="true"></i><span>ORCID</span></a></li></ul></div><a class="cv-links" href="/blog/attaches/CV.pdf" target="_blank"><i class="fas fa-file-pdf" aria-hidden="true"><span>My Detail CV.</span></i></a></div></div><div class="page" itemscope itemtype="http://schema.org/CreativeWork"><h2 class="page-title">ROS入门</h2><article><h1 id="SLAM"><a href="#SLAM" class="headerlink" title="SLAM"></a>SLAM</h1><p>本教程主要参考<a href="https://github.com/huchunxu/ros_21_tutorials" target="_blank" rel="noopener">古月ROS入门21讲</a></p>
+<h2 id="基础概述"><a href="#基础概述" class="headerlink" title="基础概述"></a>基础概述</h2><h3 id="常用命令行"><a href="#常用命令行" class="headerlink" title="常用命令行"></a>常用命令行</h3><p>Ubuntu系统下常用</p>
+<table>
+    <tr>
+        <td>shutdown</td>
+        <td>useadd</td>
+        <td>passwd</td>
+        <td>usedel</td>
+        <td>id</td>
+        <td>su</td>
+    </tr>
+    <tr>
+        <td>groupadd</td>
+        <td>groupdel</td>
+        <td>usemod</td>
+        <td>man</td>
+        <td>help</td>
+        <td>pwd</td>
+    </tr>
+    <tr>
+        <td>ls</td>
+        <td>cd</td>
+        <td>mkdir</td>
+        <td>rmdir</td>
+        <td>touch</td>
+        <td>cp</td>
+    </tr>
+    <tr>
+        <td>rm</td>
+        <td>mv</td>
+        <td>cat</td>
+        <td>more</td>
+        <td>less</td>
+        <td>>和>></td>
+    </tr>
+    <tr>
+        <td>echo</td>
+        <td>head</td>
+        <td>tail</td>
+        <td>ln</td>
+        <td>history</td>
+        <td>date</td>
+    </tr>
+    <tr>
+        <td>cal</td>
+        <td>find</td>
+        <td>locate</td>
+        <td>grep</td>
+        <td>zip/unzip</td>
+        <td>tar</td>
+    </tr>
+    <tr>
+        <td>chown</td>
+        <td>chmod</td>
+        <td>ps</td>
+        <td>kill</td>
+        <td>top</td>
+        <td>apt</td>
+    </tr>
+</table>
+
+<h3 id="常用cmake指令"><a href="#常用cmake指令" class="headerlink" title="常用cmake指令"></a>常用cmake指令</h3><p>一般编译一个cmake工程, 要用如下代码:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake ..</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+<p>如果编译完要安装的话, 需要</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+<p>下面是一些常用句法</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 声明要求的cmake最低版本</span></span><br><span class="line">cmake_minimum_required( VERSION 2.8 )</span><br><span class="line"><span class="meta">#</span><span class="bash"> 声明一个cmake工程</span></span><br><span class="line">project( HELLO )</span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加一个可执行程序</span></span><br><span class="line">add_executable( helloSLAM helloSLAME.cpp )</span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加一个静态库</span></span><br><span class="line">add_library( hello libHelloSLAM.cpp )</span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加一个共享库</span></span><br><span class="line">add_library( hello_shared SHARED libHelloSLAM.cpp)</span><br><span class="line"><span class="meta">#</span><span class="bash"> 将useHello 链接hello_shared库</span></span><br><span class="line">add_executable( useHello useHello.cpp )</span><br><span class="line">target_link_libraries( useHello hello_shared )</span><br></pre></td></tr></table></figure>
+<h3 id="ROS核心概念"><a href="#ROS核心概念" class="headerlink" title="ROS核心概念"></a>ROS核心概念</h3><h4 id="Node-节点"><a href="#Node-节点" class="headerlink" title="Node(节点)"></a>Node(节点)</h4><p>— 执行单元</p>
+<ul>
+<li>独立进程</li>
+<li>不限语言</li>
+<li>名称唯一</li>
+</ul>
+<h4 id="ROS-Master-节点管理器"><a href="#ROS-Master-节点管理器" class="headerlink" title="ROS Master(节点管理器)"></a>ROS Master(节点管理器)</h4><p>— 控制中心</p>
+<ul>
+<li>提供命名和注册服务</li>
+<li>管理Node</li>
+<li>提供参数服务器</li>
+</ul>
+<img src="/blog/2020/04/02/learn-ros/p1.png" class="" title="Node and ROS Master">
+<h4 id="通信机制"><a href="#通信机制" class="headerlink" title="通信机制"></a>通信机制</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">特点</th>
+<th style="text-align:center">Topic/Message</th>
+<th style="text-align:center">Service</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">同步性</td>
+<td style="text-align:center">异步</td>
+<td style="text-align:center">同步</td>
+</tr>
+<tr>
+<td style="text-align:center">通信模型</td>
+<td style="text-align:center">发布/订阅模型</td>
+<td style="text-align:center">请求/应答模型</td>
+</tr>
+<tr>
+<td style="text-align:center">反馈机制</td>
+<td style="text-align:center">无</td>
+<td style="text-align:center">有</td>
+</tr>
+<tr>
+<td style="text-align:center">实时性</td>
+<td style="text-align:center">弱</td>
+<td style="text-align:center">强</td>
+</tr>
+<tr>
+<td style="text-align:center">Node关系</td>
+<td style="text-align:center">多对多</td>
+<td style="text-align:center">一对多(只有一个Server)</td>
+</tr>
+<tr>
+<td style="text-align:center">适用场景</td>
+<td style="text-align:center">数据传输</td>
+<td style="text-align:center">某些需要完成又不用频繁调用的功能</td>
+</tr>
+</tbody>
+</table>
+</div>
+<img src="/blog/2020/04/02/learn-ros/p2.png" class="" title="Topic&#x2F;Message">
+<img src="/blog/2020/04/02/learn-ros/p3.png" class="" title="Service">
+<h4 id="Parameter-参数"><a href="#Parameter-参数" class="headerlink" title="Parameter(参数)"></a>Parameter(参数)</h4><p>全局使用的参数, 储存形式是字典</p>
+<h2 id="开发流程"><a href="#开发流程" class="headerlink" title="开发流程"></a>开发流程</h2><p>工作空间workspace是存放工程的文件夹, 包括4个部分</p>
+<ul>
+<li>src: source space</li>
+<li>build: build space</li>
+<li>devel: development space</li>
+<li>install: install space</li>
+</ul>
+<p>创建工作空间(以catkin_ws举例)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p ~/catkin_ws/src</span><br><span class="line">cd ~/catkin_ws/src</span><br><span class="line">catkin_init_workspace</span><br><span class="line">cd ~/catkin_ws</span><br><span class="line">catkin_make</span><br><span class="line">source devel/setup.bash</span><br></pre></td></tr></table></figure>
+<p>创建功能包(以test举例, 依赖是roscpp rospy)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/catkin_ws/src</span><br><span class="line">catkin_create_pkg test roscpp rospy</span><br></pre></td></tr></table></figure>
+<p>编译工作空间中所有功能包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~/catkin_ws</span><br><span class="line">catkin_make</span><br><span class="line">source ~/catkin-ws/devel/setup.bash</span><br></pre></td></tr></table></figure>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><h4 id="所有ROS初学者的第一个程序"><a href="#所有ROS初学者的第一个程序" class="headerlink" title="所有ROS初学者的第一个程序"></a>所有ROS初学者的第一个程序</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">roscore</span><br><span class="line">rosrun turtlesim turtlesim_node</span><br><span class="line">rosrun turtlesim turtle_teleop_key</span><br></pre></td></tr></table></figure>
+<img src="/blog/2020/04/02/learn-ros/p4.png" class="" title="bash">
+<img src="/blog/2020/04/02/learn-ros/p5.png" class="" title="turtlesim">
+<h4 id="Topic-Message"><a href="#Topic-Message" class="headerlink" title="Topic/Message"></a>Topic/Message</h4><ol>
+<li><p>定义msg文件</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">string name</span><br><span class="line">uint8 sex</span><br><span class="line">uint8 age</span><br><span class="line"></span><br><span class="line">uint8 unknown &#x3D; 0</span><br><span class="line">uint8 male &#x3D; 1</span><br><span class="line">uint8 female &#x3D; 2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在package.xml中添加功能包依赖</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build_depend</span>&gt;</span>message_generation<span class="tag">&lt;/<span class="name">build_depend</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">exec_depend</span>&gt;</span>message_runtime<span class="tag">&lt;/<span class="name">exec_depend</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在CmakeLists.txt中添加编译选项</p>
+ <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">find_package</span>( ... message_generation)</span><br><span class="line">add_message_files(FILES Person.msg)</span><br><span class="line">generate_messages(DEPENDENCIES std_msgs)</span><br><span class="line">catkin_package( ... message_runtime)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>示例代码见<a href="https://github.com/huchunxu/ros_21_tutorials/tree/master/learning_topic" target="_blank" rel="noopener">古月ROS入门21讲</a></p>
+<h4 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h4><p>.srv文件分为两部分, 分别是request和response, 在srv文件中以 —- 分隔</p>
+<ol>
+<li><p>定义srv文件</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">string name</span><br><span class="line">uint8 sex</span><br><span class="line">uint8 age</span><br><span class="line"></span><br><span class="line">uint8 unknown &#x3D; 0</span><br><span class="line">uint8 male &#x3D; 1</span><br><span class="line">uint8 female &#x3D; 2</span><br><span class="line">---</span><br><span class="line">string result</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在package.xml中添加功能包依赖</p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build_depend</span>&gt;</span>message_generation<span class="tag">&lt;/<span class="name">build_depend</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">exec_depend</span>&gt;</span>message_runtime<span class="tag">&lt;/<span class="name">exec_depend</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在CmakeLists.txt中添加编译选项</p>
+ <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">find_package</span>( ... message_generation)</span><br><span class="line">add_service_files(FILES Person.srv)</span><br><span class="line">generate_messages(DEPENDENCIES std_msgs)</span><br><span class="line">catkin_package( ... message_runtime)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>示例代码见<a href="https://github.com/huchunxu/ros_21_tutorials/tree/master/learning_service" target="_blank" rel="noopener">古月ROS入门21讲</a></p>
+<h4 id="Parameter"><a href="#Parameter" class="headerlink" title="Parameter"></a>Parameter</h4><p>主要就是对set函数和get函数的使用<br>C++版本</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将name="/param"的参数设置为0</span></span><br><span class="line">ros::param::<span class="built_in">set</span>(<span class="string">"/param"</span>, <span class="number">0</span>);</span><br><span class="line"><span class="comment">//将name="/param"的参数读取到param</span></span><br><span class="line">ros::param::get(<span class="string">"/param"</span>, param);</span><br></pre></td></tr></table></figure>
+<p>Python版本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将name="/param"的参数设置为0</span></span><br><span class="line">rospy.set_param(<span class="string">"/param"</span>, <span class="number">0</span>)</span><br><span class="line"><span class="comment"># 将name="/param"的参数读取到param</span></span><br><span class="line">param = rospy.get_param(<span class="string">'/param'</span>)</span><br></pre></td></tr></table></figure>
+<p>示例代码见<a href="https://github.com/huchunxu/ros_21_tutorials/tree/master/learning_parameter" target="_blank" rel="noopener">古月ROS入门21讲</a></p>
+<h4 id="Launch"><a href="#Launch" class="headerlink" title="Launch"></a>Launch</h4><p>在ros系统中, 可以使用rosrun启动Node, 但是很多时候一整个系统的Node数量非常多, 这个时候就需要roslaunch运行.launch文件来代替</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">launch</span>&gt;</span><span class="comment">&lt;!--根元素--&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- pkg是Node的可执行文件所在的包, type是可执行文件的名字, name是Node名称, 同一个可执行文件可以创建多个Node, 但这些Node不可有相同的名称 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">node</span> <span class="attr">pkg</span>=<span class="string">"package-name"</span> <span class="attr">type</span>=<span class="string">"executable-name"</span> <span class="attr">name</span>=<span class="string">"node-name"</span>&gt;</span><span class="tag">&lt;/<span class="name">node</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 键值对 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"value"</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 从文件读取参数 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">rosparam</span> <span class="attr">file</span>=<span class="string">"params.yml"</span> <span class="attr">command</span>=<span class="string">"load"</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 重映射资源, 一般是主题 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">remap</span> <span class="attr">from</span>=<span class="string">"/topic"</span> <span class="attr">to</span>=<span class="string">"/another_topic"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">launch</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="rosbag"><a href="#rosbag" class="headerlink" title="rosbag"></a>rosbag</h4><p>在ROS中, 可以使用rosbag对数据进行记录, 方便后来的数据复盘.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 记录全部(-a)数据</span></span><br><span class="line">cd ~/rosbag_files</span><br><span class="line">rosbag record -a</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 只记录部分topic</span></span><br><span class="line">rosbag record /topic_name1 /topic_name2 /topic_name3</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 指定名字</span></span><br><span class="line">rosbag record -o &lt;bag_name&gt;.bag</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 回放数据</span></span><br><span class="line">rosbag play &lt;bag_name&gt;.bag</span><br></pre></td></tr></table></figure>
+<p>也可以在launch文件中使用</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">node</span> <span class="attr">pkg</span>=<span class="string">"rosbag"</span> <span class="attr">type</span>=<span class="string">"record"</span> <span class="attr">name</span>=<span class="string">"rosbag_record"</span> <span class="attr">args</span>=<span class="string">"/topic1 /topic2"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</article></div></main><div class="nav-wrap"><div class="nav"><button class="site-nav"><div class="navicon"></div></button><ul class="nav_items"><li class="nav_item"><a class="nav-page" href="/blog/"> Publications</a></li><li class="nav_item"><a class="nav-page" href="/blog/"> About</a></li><li class="nav_item"><a class="nav-page" href="https://lachlanlin.gitee.io/blog/" target="_blank" rel="noopener"> Blog</a></li></ul></div><div class="cd-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></div></div><footer id="page_footer"><div class="footer_wrap"><div class="copyright">&copy;2020 - 2021 by Lachlan</div><div class="theme-info">Powered by <a href="https://hexo.io" target="_blank" rel="nofollow noopener">Hexo</a> & <a href="https://github.com/PhosphorW/hexo-theme-academia" target="_blank" rel="nofollow noopener">Academia Theme</a></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery-pjax@latest/jquery.pjax.min.js"></script><script src="/blog/js/main.js"></script></body></html>
